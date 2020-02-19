@@ -21,7 +21,7 @@ function App() {
       setLoading(false);
     }
     fetchData();
-  }, [])
+  }, []);
 
   const loadingPokemon = async (data) => {
     let _pokemonData = await Promise.all(

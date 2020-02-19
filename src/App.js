@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { getAllPokemon, getPokemon } from './services/pokemon';
 import Card from './components/Card/Card';
 import Navbar from './components/Navbar/Navbar';
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/Navbar';
 
@@ -48,9 +47,9 @@ function App() {
   const loadingPokemon = async (data) => {
     let _pokemonData = await Promise.all(
       data.map(async pokemon => {
-      let pokemonRecord = await getPokemon(pokemon.url);
-      return pokemonRecord;
-    })
+        let pokemonRecord = await getPokemon(pokemon.url);
+        return pokemonRecord;
+      })
     );
 
     setPokemonData(_pokemonData);

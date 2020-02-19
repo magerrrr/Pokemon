@@ -67,8 +67,11 @@ function App() {
     <>
     <NavBar />
     <div className='btn'>
-      <button onClick={prev}>Prev</button>
-      <button onClick={next}>Next</button>
+      <button onClick={showAllPokemons}>Get all Pokemons</button>
+    </div>
+    <div className='btn'>
+      <button onClick={prev}>Previous 20 items</button>
+      <button onClick={next}>Next 20 items</button>
     </div>
     <div>
       {loading ? (
@@ -84,8 +87,8 @@ function App() {
         )}
     </div>
     <div className='btn'>
-      <button onClick={prev}>Prev</button>
-      <button onClick={next}>Next</button>
+      <button onClick={prev}>Previous 20 items</button>
+      <button onClick={next}>Next 20 items</button>
     </div>
     </>
   );

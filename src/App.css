@@ -17,7 +17,7 @@
 .btn {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .btn button {
@@ -28,4 +28,36 @@
   background: #30a7d7;
   color: #fff;
   font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  transition-duration: 0.2s;
+}
+.btn button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.allPokemonsTitle {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.filterTitle {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto 20px auto;
+}
+
+select {
+  font-size: 110%;
+  width: 50%;
+  outline: none;
 }

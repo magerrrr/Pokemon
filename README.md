@@ -1,5 +1,5 @@
-## ReactJS app for finding your favorite [Pokemon](https://pokemon-qjd1na8o8.now.sh/)
-You can open this link to see [DEMO](https://pokemon-qjd1na8o8.now.sh/)  
+## ReactJS app for finding your favorite [Pokemon](https://pokemon.magerrrr.now.sh/)
+You can open this link to see [DEMO](https://pokemon.magerrrr.now.sh/)  
 This application was created with Create React App.  
 The app consumes the following API [PokeAPI](https://pokeapi.co/).  
 

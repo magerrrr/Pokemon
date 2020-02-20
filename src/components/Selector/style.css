@@ -1,0 +1,18 @@
+.filterTitle {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+}
+
+select {
+  font-size: 110%;
+  width: 50%;
+  outline: none;
+}

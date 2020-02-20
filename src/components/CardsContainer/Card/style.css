@@ -1,62 +1,62 @@
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .Card {
-    background: #fff;
-    border: 2px solid rgb(66, 66, 66);
-    padding-top: 25px;
-    border-radius: 6px;
+  background: #fff;
+  border: 2px solid rgb(66, 66, 66);
+  padding-top: 25px;
+  border-radius: 6px;
 }
 
 .Card__name {
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 800;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
 }
 
 .Card__img {
-    text-align: center;
-    padding-bottom: 25px;
+  text-align: center;
+  padding-bottom: 25px;
 }
 
 .Card__types {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid rgb(66, 66, 66);
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(66, 66, 66);
 }
 
 .Card__type {
-    padding: 5px 10px;
-    margin: 10px;
-    border-radius: 5px;
-    background: rgb(126, 43, 221);
-    color: #fff;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background: rgb(126, 43, 221);
+  color: #fff;
 }
 
 .Card__info-two {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .Card__data--ability {
-    justify-content: center;
-    text-align: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .Card__info {
-    border-top: rgb(66, 66, 66) 1px solid;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: rgb(208, 207, 207);
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+  border-top: rgb(66, 66, 66) 1px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgb(208, 207, 207);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .Card__data p {
-    text-align: center;
+  text-align: center;
 }
 
 .Card__data .title {
-    font-weight: 700;
+  font-weight: 700;
 }

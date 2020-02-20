@@ -18,6 +18,8 @@ p {
 .Card__img {
   text-align: center;
   padding-bottom: 25px;
+  min-width: 96px;
+  min-height: 124px;
 }
 
 .Card__types {

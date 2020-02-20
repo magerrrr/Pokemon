@@ -7,10 +7,13 @@ The app consumes the following API [PokeAPI](https://pokeapi.co/).
 * Download and install the latest [Nodejs](https://nodejs.org/en/download/stable/).
 * Run `npm start` from you repository folder to download the required modules. All dependent modules will be located in the  *node_modules* folder.
 * The local repo folder has the following structure: <pre>
-    node_modules - app dependences restored by `npm install` command, you can delete this folder and restore later again.
-    public - folder with favicon, iindex.html, logos, manifest.json and robots.txt files.
-    src - folder with components folder which includes 6 independent components, helpers folder which includes pokemon.js file with object with color for filling pokemons types, services folder which includes file with function.
-    and also App.css - file with styles for App.js, index.css and index.js files.
+    - node_modules - app dependences restored by `npm install` command, you can delete this folder and restore later again.
+    
+    - public - folder with favicon, iindex.html, logos, manifest.json and robots.txt files.
+    
+    - src - folder with components folder which includes 6 independent components, helpers folder which includes pokemon.js file with object with color for filling pokemons types, services folder which includes file with function.
+    
+    - and also App.css - file with styles for App.js, index.css and index.js files.
 </pre>
 
 ### Features

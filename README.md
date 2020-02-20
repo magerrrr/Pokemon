@@ -23,8 +23,8 @@ The app consumes the following API [PokeAPI](https://pokeapi.co/).
 
 ### Guide
 
-- By default, you are open application and at this moment automatically you getting 20 pokemons.
+- By default, when you open application 20 Pokemons are loaded from the server.
 - If you want to get next 20 pokemons - press the next button.
-- If you want previous 20 pokemons - press the previous button.
-- You can get app Pokemons from the server. It's simple - press "Get all pokemons!" button.
+- If you want to get previous 20 pokemons - press the previous button.
+- You can get ALL Pokemons from the server. It's simple - for it you can press "Get all pokemons!" button.
 - You can find your favorite Pokemon by type - for it chooses a pokemon's type.

@@ -1,96 +1,98 @@
 import React, { useState, useEffect } from 'react';
-import { getAllPokemon, getPokemon } from './services/pokemon';
-import Navbar from './components/Navbar/Navbar';
-import './App.css';
+import { fetchItemsFromServer } from './services/pokemon';
 import NavBar from './components/Navbar';
+import Selector from './components/Selector/Selector';
+import ButtonWithTitle from './components/ButtonWithTitle/ButtonWithTitle';
+import Pagination from './components/Pagination/Pagination';
 import CardsContainer from './components/CardsContainer/CardsContainer';
+import './App.css';
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([]);
+  const [items, setItems] = useState([]);
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
-  const [loading, setLoading] = useState(true);
-  const initialUrl = 'https://pokeapi.co/api/v2/pokemon';
-  const allPokemonsUrl = 'https://pokeapi.co/api/v2/pokemon?limit=964';
+  const [isLoading, setLoading] = useState(true);
+  const INITIAL_URL = 'https://pokeapi.co/api/v2/pokemon';
+  const ALL_ITEMS_URL = 'https://pokeapi.co/api/v2/pokemon?limit=964';
   
   useEffect(() => {
     async function fetchData() {
-      let response = await getAllPokemon(initialUrl);
+      let response = await fetchItemsFromServer(INITIAL_URL);
       setNextUrl(response.next);
       setPrevUrl(response.previous);
-      let pokemon = await loadingPokemon(response.results);
-      console.log(pokemon);
+      await getPokemons(response.results);
       setLoading(false);
     }
     fetchData();
   }, []);
 
-  const showAllPokemons = async () => {
+  const showAllItems = async () => {
     setLoading(true);
-    let data = await getAllPokemon(allPokemonsUrl);
-    await loadingPokemon(data.results);
+    let data = await fetchItemsFromServer(ALL_ITEMS_URL);
+    await getPokemons(data.results);
     setLoading(false);
   }
 
-  const next = async () => {
+  const filterItemsByType = async (url) => {
     setLoading(true);
-    let data = await getAllPokemon(nextUrl);
-    await loadingPokemon(data.results);
+    let data = await fetchItemsFromServer(url);
+    await getPokemonsByType(data.pokemon);
+    setLoading(false);
+  }
+
+  const getNextItems = async () => {
+    setLoading(true);
+    let data = await fetchItemsFromServer(nextUrl);
+    await getPokemons(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
     setLoading(false);
   }
 
-  const prev = async () => {
+  const getPrevItems = async () => {
     if (!prevUrl) return;
 
     setLoading(true);
-    let data = await getAllPokemon(prevUrl);
-    await loadingPokemon(data.results);
+    let data = await fetchItemsFromServer(prevUrl);
+    await getPokemons(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
     setLoading(false);
   }
 
-  const loadingPokemon = async (data) => {
+  const getPokemons = async (data) => {
     let _pokemonData = await Promise.all(
       data.map(async pokemon => {
-        let pokemonRecord = await getPokemon(pokemon.url);
+        let pokemonRecord = await fetchItemsFromServer(pokemon.url);
         return pokemonRecord;
       })
     );
+    setItems(_pokemonData);
+  };
 
-    setPokemonData(_pokemonData);
+  const getPokemonsByType = async (data) => {
+    let _pokemonData = await Promise.all(
+      data.map(async element => {
+        let pokemonRecord = await fetchItemsFromServer(element.pokemon.url);
+        return pokemonRecord;
+      })
+    );
+    setItems(_pokemonData);
   };
 
   return (
-    <>
-    <NavBar />
-    <div className='btn'>
-      <button onClick={showAllPokemons}>Get all Pokemons</button>
+    <div className='App'>
+      <NavBar />
+      <ButtonWithTitle 
+        title='You can see ALL Pokemons! Click here:'
+        buttonText='Get all Pokemons!'
+        clickHandler={showAllItems}
+      />
+      <Selector onChangeHandler={filterItemsByType}/>
+      <Pagination prev={getPrevItems} next={getNextItems} loading={isLoading}/>
+      <CardsContainer loading={isLoading} cardsDataArray={items} />
+      <Pagination prev={getPrevItems} next={getNextItems} loading={isLoading}/>
     </div>
-    <div className='btn'>
-      <button onClick={prev}>Previous 20 items</button>
-      <button onClick={next}>Next 20 items</button>
-    </div>
-    <div>
-      {loading ? (
-        <h1 className='loader'>Loading... Please wait</h1>
-        ) : (
-          <>
-            <div className='grid-container'>
-              {pokemonData.map((pokemon, i) => {
-                return <Card key={i} pokemon={pokemon} />;
-              })}
-            </div>
-          </>
-        )}
-    </div>
-    <div className='btn'>
-      <button onClick={prev}>Previous 20 items</button>
-      <button onClick={next}>Next 20 items</button>
-    </div>
-    </>
   );
 }
 

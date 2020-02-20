@@ -3,7 +3,7 @@ import './style.css';
 
 function Navbar() {
   return(
-    <div className='Navbar'>Task for iTechArt "Frontend Challenge"</div>
+    <div className='navbar'>Task for iTechArt "Frontend Challenge"</div>
   )
 }
 

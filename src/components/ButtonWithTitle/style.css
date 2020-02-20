@@ -1,0 +1,29 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-container button {
+  border-style: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background: #30a7d7;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  transition-duration: 0.2s;
+}
+
+.button-container button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.header-text {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}

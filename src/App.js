@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getAllPokemon, getPokemon } from './services/pokemon';
-import Card from './components/Card/Card';
 import Navbar from './components/Navbar/Navbar';
 import './App.css';
 import NavBar from './components/Navbar';
+import CardsContainer from './components/CardsContainer/CardsContainer';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);

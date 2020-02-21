@@ -1,17 +1,30 @@
 import React from 'react';
 import './style.css';
+import { connect } from 'react-redux';
+import { getItemsPart } from '../../services/pokemon';
 
-function Pagination({ prev, next, loading }) {
-  if (loading){
+function Pagination({ state, getItemsPart }) {
+  if (state.isLoading){
     return null
   } else {
     return(
       <div className='button-container'>
-        <button onClick={prev}>Previous</button>
-        <button onClick={next}>Next</button>
+        <button onClick={() => getItemsPart(state.prevUrl)}>Previous</button>
+        <button onClick={() => getItemsPart(state.nextUrl)}>Next</button>
       </div>
     )
   }
 }
 
-export default Pagination;
+const mapStateToProps = (state) => ({
+  state
+});
+
+const mapDispatchToProps = { 
+  getItemsPart
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Pagination);

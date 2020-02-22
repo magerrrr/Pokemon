@@ -72,5 +72,9 @@ export const getItemsPart = (url) => {
 }
 
 export const getMoves = (pokemon) => {
-  return pokemon.moves.map(move => move.move.name.toUpperCase());
+  return pokemon.moves.map(move => move.move.name
+    .toLowerCase()
+    .split('-')
+    .map(subStr => `${subStr[0].toUpperCase()}${subStr.slice(1)}`)
+    .join(' '));
 }

@@ -55,9 +55,9 @@ export const getItemsPart = (url) => {
   }
 }
 
-export const getPokemons = (data) => {
-  let _pokemonData = Promise.all(data.map(async pokemon => {
-    const pokemonRecord = await fetchItemsFromServer(pokemon.url);
+export const getPokemons = (pokemons) => {
+  let _pokemonData = Promise.all(pokemons.map(async pokemonItem => {
+    const pokemonRecord = await fetchItemsFromServer(pokemonItem.url);
     return pokemonRecord;
   }));
   return _pokemonData;

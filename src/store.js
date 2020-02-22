@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
 
 const initialState = {
@@ -35,7 +36,9 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(
   reducer,
-  applyMiddleware(ReduxThunk)
+  composeWithDevTools(
+    applyMiddleware(ReduxThunk)
+  )
 );
 
 export default store;

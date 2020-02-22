@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import pokemonType from '../../../helpers/pokemonTypes';
+import PokemonInfo from '../../PokemonInfo/PokemonInfo';
 
 function Card({ item }) {
   return (

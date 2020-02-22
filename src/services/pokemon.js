@@ -70,3 +70,7 @@ export const getPokemonsByType = (data) => {
   }));
   return _pokemonData;
 }
+
+export const getMoves = (pokemon) => {
+  return pokemon.moves.map(move => move.move.name.toUpperCase());
+}

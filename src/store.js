@@ -6,13 +6,13 @@ const initialState = {
   items: [],
   nextUrl: '',
   prevUrl: '',
-  isLoading: false
+  isLoading: false,
+  evolutionChain: []
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_ITEMS':
-      console.log('in REDUCER I have: ', action.payload);
       return {
         ...state, items: [...action.payload]
       };
@@ -25,10 +25,13 @@ const reducer = (state = initialState, action) => {
         ...state, prevUrl: action.payload
       };
     case 'SET_LOADING':
-      console.log('setLoading', action.payload);
       return {
         ...state, isLoading: action.payload
       };
+    case 'SET_EVOLUTION_CHAIN':
+      return {
+        ...state, evolutionChain: [...action.payload]
+      }
     default:
       return state;
   }

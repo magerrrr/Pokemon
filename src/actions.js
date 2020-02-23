@@ -25,3 +25,10 @@ export function setItems(itemsArray) {
     payload: itemsArray,
   }
 }
+
+export function setEvolutionChain(evolution) {
+  return {
+    type: 'SET_EVOLUTION_CHAIN',
+    payload: evolution,
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import pokemonType from '../../../helpers/pokemonTypes';
 import PokemonInfo from '../../PokemonInfo/PokemonInfo';
+import PokemonEvolution from '../../PokemonEvolution/PokemonEvolution';
 
 function Card({ item }) {
   return (
@@ -71,6 +72,7 @@ function Card({ item }) {
           </div>
         </div>
         <PokemonInfo pokemon={item}/>
+        <PokemonEvolution pokemon={item}/>
       </div>
     </div>
   );

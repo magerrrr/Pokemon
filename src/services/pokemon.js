@@ -1,4 +1,5 @@
-import { setLoading, setNextUrl, setPrevUrl, setItems } from '../actions';
+import { setLoading, setNextUrl, setPrevUrl, setItems, setEvolutionChain } from '../actions';
+import { POKEMON_SPECIES } from '../helpers/urls';
 
 export const getPokemons = (pokemons) => {
   let _pokemonData = Promise.all(pokemons.map(async pokemonItem => {
@@ -40,23 +41,41 @@ export const showAllItems = (url) => {
 
 export const filterItemsByType = (url) => {
   return (dispatch) => {
-    console.log(url);
     dispatch(setLoading(true));
     fetchItemsFromServer(url)
       .then(data => {
-        console.log(data);
         return getPokemonsByType(data.pokemon)
       })
       .then(data => {
-        console.log(data);
         return dispatch(setItems(data))
       })
       .then(() => dispatch(setLoading(false)))
   }
 }
 
+export const getEvolutionChain = (id) => {
+  return (dispatch) => {
+    fetchItemsFromServer(POKEMON_SPECIES + id)
+    .then(data => {
+      return fetchItemsFromServer(data.evolution_chain.url)
+    })
+    .then(data => {
+      const evolutionChain = [
+        data.chain.species,
+        data.chain.evolves_to[0].species,
+        data.chain.evolves_to[0].evolves_to[0].species
+      ]
+      return Promise.all([
+        fetchItemsFromServer(evolutionChain[0].url),
+        fetchItemsFromServer(evolutionChain[1].url),
+        fetchItemsFromServer(evolutionChain[2].url)
+      ])
+    })
+    .then((data) => dispatch(setEvolutionChain(data)))
+  }
+}
+
 export const getItemsPart = (url) => {
-  console.log(url);
   if (!url) return;
   return (dispatch) => {
     dispatch(setLoading(false));

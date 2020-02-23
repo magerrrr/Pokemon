@@ -16,6 +16,7 @@ div .popup-content {
 }
 
 .pokemonInfoButton {
+  width: 185px;
   border-style: none;
   padding: 5px 30px;
   border-radius: 5px;

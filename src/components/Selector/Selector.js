@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import typeName from '../../helpers/selectorValues';
 
 function Selector({onChangeHandler}) {
   return(
@@ -8,26 +9,24 @@ function Selector({onChangeHandler}) {
       <div className='filter'>
         <select onChange={(e) => onChangeHandler(e.target.value)} defaultValue={'DEFAULT'}>
           <option value="DEFAULT" disabled>Choose a type ...</option>
-          <option value='https://pokeapi.co/api/v2/type/1/'>Normal</option>
-          <option value='https://pokeapi.co/api/v2/type/2/'>Fighting</option>
-          <option value='https://pokeapi.co/api/v2/type/3/'>Flying</option>
-          <option value='https://pokeapi.co/api/v2/type/4/'>Poison</option>
-          <option value='https://pokeapi.co/api/v2/type/5/'>Ground</option>
-          <option value='https://pokeapi.co/api/v2/type/6/'>Rock</option>
-          <option value='https://pokeapi.co/api/v2/type/7/'>Bug</option>
-          <option value='https://pokeapi.co/api/v2/type/8/'>Ghost</option>
-          <option value='https://pokeapi.co/api/v2/type/9/'>Steel</option>
-          <option value='https://pokeapi.co/api/v2/type/10/'>Fire</option>
-          <option value='https://pokeapi.co/api/v2/type/11/'>Water</option>
-          <option value='https://pokeapi.co/api/v2/type/12/'>Grass</option>
-          <option value='https://pokeapi.co/api/v2/type/13/'>Electric</option>
-          <option value='https://pokeapi.co/api/v2/type/14/'>Pyschic</option>
-          <option value='https://pokeapi.co/api/v2/type/15/'>Ice</option>
-          <option value='https://pokeapi.co/api/v2/type/16/'>Dragon</option>
-          <option value='https://pokeapi.co/api/v2/type/17/'>Dark</option>
-          <option value='https://pokeapi.co/api/v2/type/18/'>Fairy</option>
-          <option value='https://pokeapi.co/api/v2/type/10001/'>Unknown</option>
-          <option value='https://pokeapi.co/api/v2/type/10002/'>Shadow</option>
+          <option value={typeName.normal}>Normal</option>
+          <option value={typeName.fighting}>Fighting</option>
+          <option value={typeName.flying}>Flying</option>
+          <option value={typeName.poison}>Poison</option>
+          <option value={typeName.ground}>Ground</option>
+          <option value={typeName.rock}>Rock</option>
+          <option value={typeName.bug}>Bug</option>
+          <option value={typeName.ghost}>Ghost</option>
+          <option value={typeName.steel}>Steel</option>
+          <option value={typeName.fire}>Fire</option>
+          <option value={typeName.water}>Water</option>
+          <option value={typeName.grass}>Grass</option>
+          <option value={typeName.electric}>Electric</option>
+          <option value={typeName.pyschic}>Pyschic</option>
+          <option value={typeName.ice}>Ice</option>
+          <option value={typeName.dragon}>Dragon</option>
+          <option value={typeName.dark}>Dark</option>
+          <option value={typeName.fairy}>Fairy</option>
         </select>
       </div>
     </>

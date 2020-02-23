@@ -1,6 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
+import {
+  SET_ITEMS,
+  SET_NEXT_URL,
+  SET_PREV_URL,
+  SET_LOADING,
+  SET_EVOLUTION_CHAIN
+} from './helpers/actionsTypes';
 
 const initialState = {
   items: [],
@@ -12,28 +19,28 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_ITEMS':
+    case SET_ITEMS:
       return {
         ...state, items: [...action.payload]
       };
-    case 'SET_NEXT_URL':
+    case SET_NEXT_URL:
       return {
         ...state, nextUrl: action.payload
       };
-    case 'SET_PREV_URL':
+    case SET_PREV_URL:
       return {
         ...state, prevUrl: action.payload
       };
-    case 'SET_LOADING':
+    case SET_LOADING:
       return {
         ...state, isLoading: action.payload
       };
-    case 'SET_EVOLUTION_CHAIN':
+    case SET_EVOLUTION_CHAIN:
       return {
         ...state, evolutionChain: [...action.payload]
       }
-    default:
-      return state;
+      default:
+        return state;
   }
 };
 

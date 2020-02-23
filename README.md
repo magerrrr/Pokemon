@@ -18,8 +18,11 @@ The app consumes the following API [PokeAPI](https://pokeapi.co/).
 
 ### Features
 
-- displaying ALL Pokemons with their avatar, stats, basic information and type.
-- Filter Pokemon by Type(Water, Electric etc)
+- Displaying ALL Pokemons with their avatar, stats, basic information and type.
+- Filter Pokemon by Type(Water, Electric etc).
+- Displaying moves list of each pokemon in pop-up window.
+- Displaying evolution information of each pokemon in pop-up window.
+- React App is mobile friendly (everything is supported except evolution information).
 
 ### Guide
 
@@ -28,3 +31,5 @@ The app consumes the following API [PokeAPI](https://pokeapi.co/).
 - If you want to get previous 20 pokemons - press the previous button.
 - You can get ALL Pokemons from the server. It's simple - for it you can press "Get all pokemons!" button.
 - You can find your favorite Pokemon by type - for it chooses a pokemon's type.
+- You can see moves list of each pokemon in pop-up window by click button Show moves.
+- You can see evolution information of each pokemon in pop-up window by click button Show evolutions.

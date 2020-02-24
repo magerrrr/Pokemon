@@ -11,7 +11,7 @@ The app consumes the following API [PokeAPI](https://pokeapi.co/).
     
     public - folder with favicon, iindex.html, logos, manifest.json and robots.txt files.
     
-    src - folder with components folder which includes 6 independent components, helpers folder which includes pokemon.js file with object with color for filling pokemons types, services folder which includes file with function.
+    src - folder with components folder which includes 9 independent components, helpers folder which includes pokemon.js file with object with color for filling pokemons types, services folder which includes file with function.
     
     and also App.css - file with styles for App.js, index.css and index.js files.
 </pre>

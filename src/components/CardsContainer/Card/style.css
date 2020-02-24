@@ -61,6 +61,7 @@ p {
   text-align: center;
   font-weight: 700;
   color: black;
+  font-size: 0.9em;
 }
 
 .Card__data .title {

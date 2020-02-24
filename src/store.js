@@ -14,7 +14,16 @@ const initialState = {
   nextUrl: '',
   prevUrl: '',
   isLoading: false,
-  evolutionChain: []
+  evolutionChain: [{
+    name: null,
+    id: null
+  }, {
+    name: null,
+    id: 0
+  }, {
+    name: null,
+    id: 0
+  }]
 }
 
 const reducer = (state = initialState, action) => {

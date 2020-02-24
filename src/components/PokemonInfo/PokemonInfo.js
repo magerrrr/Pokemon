@@ -1,20 +1,13 @@
 import React from 'react';
 import './style.css';
-import { getMoves, getEvolutionChain } from '../../services/pokemon';
+import { getMoves } from '../../services/pokemon';
 import Popup from "reactjs-popup";
-import { useSelector, useDispatch } from 'react-redux';
 
 function PokemonInfo({pokemon}) {
-  const dispatch = useDispatch();
-  const onShowEvolutions = (pokemon) => {
-    dispatch(
-      getEvolutionChain(pokemon.id)
-    )
-  }
   return(
     <Popup trigger={
       <div className='pokemonInfoButton-container'>
-        <button className='pokemonInfoButton' onClick={() => onShowEvolutions(pokemon)}>
+        <button className='pokemonInfoButton'>
           Show moves
         </button>
       </div>
@@ -29,9 +22,6 @@ function PokemonInfo({pokemon}) {
 }
 
 function MovesInfo ({moves}) {
-  useSelector(
-    state => state.evolutionChain
-  );
   return(
     <div className="modal">
       <h1>

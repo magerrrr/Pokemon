@@ -10,9 +10,7 @@ function CardsContainer({ loading, cardsDataArray}) {
         <Loader />
         ) : (
             <div className='grid-container'>
-              {cardsDataArray.map((item, i) => {
-                return <Card key={i} item={item} />;
-              })}
+              {cardsDataArray.map((item, i) => <Card key={i} item={item} />)}
             </div>
         )}
     </div>

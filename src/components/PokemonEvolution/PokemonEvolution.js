@@ -13,10 +13,12 @@ function PokemonEvolution({pokemon}) {
     )
   }
 
+  const showEvolution = item => () => onShowEvolutions(item)
+
   return( 
     <Popup trigger={
       <div className='pokemonEvoButton-container' >
-        <button className='pokemonEvoButton' onClick={() => onShowEvolutions(pokemon)}>
+        <button className='pokemonEvoButton' onClick={showEvolution(pokemon)}>
           Show Evolutions
         </button>
       </div>

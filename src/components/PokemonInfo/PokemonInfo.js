@@ -27,11 +27,7 @@ function MovesInfo ({moves}) {
       <h1>
         Pokemon's moves:
       </h1>
-      {moves.map((element, i) => {
-        return (
-          <p key={i}>{element}</p>
-        )
-      })}
+      {moves.map((element, i) => <p key={i}>{i+1}. {element}</p>)}
     </div>
   )
 }

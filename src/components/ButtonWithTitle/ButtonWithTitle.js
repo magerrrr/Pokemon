@@ -6,7 +6,9 @@ function ButtonWithTitle({ title, buttonText, clickHandler}) {
     <>
       <h3 className='header-text'>{title}</h3>
       <div className='button-container'>
-  <button onClick={clickHandler}>{buttonText}</button>
+        <button onClick={clickHandler}>
+          {buttonText}
+        </button>
       </div>
     </>
   )

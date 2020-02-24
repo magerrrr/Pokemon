@@ -7,23 +7,21 @@ import { HP, ATTACK, DEFENSE, SP_ATTACK, SP_DEFENSE, SPEED } from '../../../help
 
 function Card({ item }) {
 
-  const getWeight = (pokemon) => {
+  const getWeight = pokemon => {
     const kg = pokemon.weight / 10
     const lbs = pokemon.weight / 5.22;
     return `${lbs.toFixed(1)} lbs (${Math.floor(kg).toFixed(1)} kg)`;
   }
 
-  const getHeight = (pokemon) => {
+  const getHeight = pokemon => {
     const meters = pokemon.height / 10
-    const realFeet = (pokemon.height*3.28084);
+    const realFeet = (pokemon.height * 3.28084);
     const feet = Math.floor(realFeet);
     const inches = Math.round((realFeet - feet) * 12);
     return `${inches}'${feet}" (${meters.toFixed(1)} m)`;
   }
 
-  const getBaseStat = (pokemon, baseStat) => {
-    return `${pokemon.stats[baseStat].base_stat}`
-  }
+  const getBaseStat = (pokemon, baseStat) => `${pokemon.stats[baseStat].base_stat}`
 
   return (
     <div className='Card'>

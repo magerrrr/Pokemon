@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function PokemonEvolution({pokemon}) {
   const dispatch = useDispatch();
   
-  const onShowEvolutions = (pokemon) => {
+  const onShowEvolutions = pokemon => {
     dispatch(
       getEvolutionChain(pokemon.id)
     )

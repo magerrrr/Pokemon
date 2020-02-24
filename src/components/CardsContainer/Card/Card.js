@@ -11,6 +11,15 @@ function Card({ item }) {
     const lbs = pokemon.weight / 5.22;
     return `${lbs.toFixed(1)} lbs (${Math.floor(kg).toFixed(1)} kg)`;
   }
+
+  const getHeight = (pokemon) => {
+    const meters = pokemon.height / 10
+    const realFeet = (pokemon.height*3.28084);
+    const feet = Math.floor(realFeet);
+    const inches = Math.round((realFeet - feet) * 12);
+    return `${inches}'${feet}" (${meters.toFixed(1)} m)`;
+  }
+
   return (
     <div className='Card'>
       <div className='Card__name'>{item.name}</div>
@@ -39,7 +48,7 @@ function Card({ item }) {
           </div>
           <div className='Card__data Card__data--ability'>
             <p className='title'>Height:</p>
-            <p className='baseStat'>{item.height}</p>
+            <p className='baseStat'>{getHeight(item)}</p>
           </div>
           <div className='Card__data Card__data--ability'>
             <p className='title'>Ability:</p>

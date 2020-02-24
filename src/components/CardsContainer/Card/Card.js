@@ -3,6 +3,7 @@ import './style.css';
 import pokemonType from '../../../helpers/pokemonTypes';
 import PokemonInfo from '../../PokemonInfo/PokemonInfo';
 import PokemonEvolution from '../../PokemonEvolution/PokemonEvolution';
+import { HP, ATTACK, DEFENSE, SP_ATTACK, SP_DEFENSE, SPEED } from '../../../helpers/pokemonBaseStats';
 
 function Card({ item }) {
 
@@ -18,6 +19,10 @@ function Card({ item }) {
     const feet = Math.floor(realFeet);
     const inches = Math.round((realFeet - feet) * 12);
     return `${inches}'${feet}" (${meters.toFixed(1)} m)`;
+  }
+
+  const getBaseStat = (pokemon, baseStat) => {
+    return `${pokemon.stats[baseStat].base_stat}`
   }
 
   return (
@@ -63,27 +68,27 @@ function Card({ item }) {
         <div className='Card__baseStats'>
           <div className='Card__data--baseStats'>
             <p className='title'>HP:</p>
-            <p className='baseStat'>{item.stats[5].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, HP)}</p>
           </div>
           <div className='Card__data--baseStats'>
             <p className='title'>Attack:</p>
-            <p className='baseStat'>{item.stats[4].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, ATTACK)}</p>
           </div>
           <div className='Card__data--baseStats'>
             <p className='title'>Defense:</p>
-            <p className='baseStat'>{item.stats[3].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, DEFENSE)}</p>
           </div>
           <div className='Card__data--baseStats'>
             <p className='title'>Sp. Atc:</p>
-            <p className='baseStat'>{item.stats[2].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, SP_ATTACK)}</p>
           </div>
           <div className='Card__data--baseStats'>
             <p className='title'>Sp. Def:</p>
-            <p className='baseStat'>{item.stats[1].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, SP_DEFENSE)}</p>
           </div>
           <div className='Card__data--baseStats'>
             <p className='title'>Speed:</p>
-            <p className='baseStat'>{item.stats[0].base_stat}</p>
+            <p className='baseStat'>{getBaseStat(item, SPEED)}</p>
           </div>
         </div>
         <PokemonInfo pokemon={item}/>

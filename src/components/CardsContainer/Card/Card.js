@@ -5,6 +5,12 @@ import PokemonInfo from '../../PokemonInfo/PokemonInfo';
 import PokemonEvolution from '../../PokemonEvolution/PokemonEvolution';
 
 function Card({ item }) {
+
+  const getWeight = (pokemon) => {
+    const kg = pokemon.weight / 10
+    const lbs = pokemon.weight / 5.22;
+    return `${lbs.toFixed(1)} lbs (${Math.floor(kg).toFixed(1)} kg)`;
+  }
   return (
     <div className='Card'>
       <div className='Card__name'>{item.name}</div>
@@ -29,7 +35,7 @@ function Card({ item }) {
         <div className='Card__info-PokemonData'>
           <div className='Card__data Card__data--ability'>
             <p className='title'>Weight:</p>
-            <p className='baseStat'>{item.weight}</p>
+            <p className='baseStat'>{getWeight(item)}</p>
           </div>
           <div className='Card__data Card__data--ability'>
             <p className='title'>Height:</p>
